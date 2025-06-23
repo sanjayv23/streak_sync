@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Completion Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/cal-heatmap@4.3.3/cal-heatmap.css" rel="stylesheet" />
+  <style>
+
+    body {
+      background-color: darkgoldenrod;
+    }
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: repeat(5, 50px);
+      grid-template-rows: repeat(7, 50px);
+      gap: 5px;
+    }
+
+    .wrapper div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="wrapper"></div>
+
+  <script>
+    let completion = [100,100,100,100,100];
+    let cols = 5; 
+    let rows = 7; 
+
+    const wrapper = document.querySelector(".wrapper");
+
+    
+
+    for (let row = 1; row <= rows; row++) {
+      for (let col = 0; col < cols; col++) {
+        let index = row + col * rows; 
+        let div = document.createElement("div");
+
+        
+          div.style.background = "hsl(120,"+completion[index]+"%,50%)";
+          if(index<completion.length)div.textContent = index;
+        
+
+        wrapper.appendChild(div);
+      }
+    }
+  </script>
+  
+</body>
+</html>

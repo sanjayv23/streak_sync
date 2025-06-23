@@ -4,6 +4,9 @@
 
 <br>
 <h1>task to be done</h1>
+<form action="/streak" method="get">
+    <input type="submit" value="STREAK">
+</form>
 <form action="/task" method="post">
     <label for="name" >Tasks: </label>
     <input type="text" placeholder="  ⌨ Type Your Tasks" name="t_name">
@@ -46,4 +49,5 @@
   
 <h1>Completed Percentage %</h1>
 <h2><%=percent%></h2>
+
 <%- include('footer.ejs') %>
