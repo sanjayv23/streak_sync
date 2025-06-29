@@ -31,7 +31,7 @@ db.connect();
 
 app.get("/",(req,res)=>{
 
-    res.redirect("/home")
+    
 })
 
 app.get("/home",async (req,res)=>{
